@@ -15,7 +15,7 @@ step "deploy-octo-pet-shop-eac-database" {
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "True"
         }
-        worker_pool_variable = ""
+        worker_pool = "windows"
 
         packages {
             acquisition_location = "Server"
@@ -42,9 +42,10 @@ step "deploy-octo-pet-shop-eac-product-service" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "OctoPetShop.ProductService"
+            Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "True"
         }
-        worker_pool_variable = ""
+        worker_pool = "windows"
 
         packages {
             acquisition_location = "Server"
@@ -71,9 +72,10 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "OctoPetShop.ShoppingCartService"
+            Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "True"
         }
-        worker_pool_variable = ""
+        worker_pool = "windows"
 
         packages {
             acquisition_location = "Server"
@@ -100,9 +102,10 @@ step "deploy-octo-pet-shop-eac-web" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "OctoPetShop.Web"
+            Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "True"
         }
-        worker_pool_variable = ""
+        worker_pool = "windows"
 
         packages {
             acquisition_location = "Server"
