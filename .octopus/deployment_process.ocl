@@ -1,0 +1,111 @@
+step "deploy-octo-pet-shop-eac-database" {
+    name = "Deploy Octo Pet Shop - EAC - Database"
+    properties = {
+        Octopus.Action.TargetRoles = "OctoPetShop-EAC-Database"
+    }
+
+    action {
+        action_type = "Octopus.AzureWebApp"
+        properties = {
+            Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.Package.DownloadOnTentacle = "False"
+            Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.PackageId = "OctoPetShop.Database"
+            OctopusUseBundledTooling = "False"
+        }
+        worker_pool_variable = ""
+
+        packages {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "OctoPetShop.Database"
+            properties = {
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
+step "deploy-octo-pet-shop-eac-product-service" {
+    name = "Deploy Octo Pet Shop - EAC - Product Service"
+    properties = {
+        Octopus.Action.TargetRoles = "OctoPetShop-EAC-ProductService"
+    }
+
+    action {
+        action_type = "Octopus.AzureWebApp"
+        properties = {
+            Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.Package.DownloadOnTentacle = "False"
+            Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.PackageId = "OctoPetShop.ProductService"
+            OctopusUseBundledTooling = "False"
+        }
+        worker_pool_variable = ""
+
+        packages {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "OctoPetShop.ProductService"
+            properties = {
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
+step "deploy-octo-pet-shop-eac-shopping-cart-service" {
+    name = "Deploy Octo Pet Shop - EAC - Shopping Cart Service"
+    properties = {
+        Octopus.Action.TargetRoles = "OctoPetShop-EAC-ShoppingCartService"
+    }
+
+    action {
+        action_type = "Octopus.AzureWebApp"
+        properties = {
+            Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.Package.DownloadOnTentacle = "False"
+            Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.PackageId = "OctoPetShop.ShoppingCartService"
+            OctopusUseBundledTooling = "False"
+        }
+        worker_pool_variable = ""
+
+        packages {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "OctoPetShop.ShoppingCartService"
+            properties = {
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
+step "deploy-octo-pet-shop-eac-web" {
+    name = "Deploy Octo Pet Shop - EAC - Web"
+    properties = {
+        Octopus.Action.TargetRoles = "OctoPetShop-EAC-Web"
+    }
+
+    action {
+        action_type = "Octopus.AzureWebApp"
+        properties = {
+            Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.Package.DownloadOnTentacle = "False"
+            Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.PackageId = "OctoPetShop.Web"
+            OctopusUseBundledTooling = "False"
+        }
+        worker_pool_variable = ""
+
+        packages {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "OctoPetShop.Web"
+            properties = {
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
