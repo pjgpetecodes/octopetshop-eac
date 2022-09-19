@@ -17,6 +17,11 @@ step "deploy-octo-pet-shop-eac-database" {
         }
         worker_pool = "hosted-windows"
 
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
+
         packages {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
@@ -46,6 +51,11 @@ step "deploy-octo-pet-shop-eac-product-service" {
             OctopusUseBundledTooling = "False"
         }
         worker_pool = "hosted-windows"
+
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
 
         packages {
             acquisition_location = "Server"
@@ -77,6 +87,11 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
         }
         worker_pool = "hosted-windows"
 
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
+
         packages {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
@@ -106,6 +121,11 @@ step "deploy-octo-pet-shop-eac-web" {
             OctopusUseBundledTooling = "False"
         }
         worker_pool = "hosted-windows"
+
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
 
         packages {
             acquisition_location = "Server"
