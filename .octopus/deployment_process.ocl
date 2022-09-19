@@ -15,7 +15,7 @@ step "deploy-octo-pet-shop-eac-database" {
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
-        worker_pool = "windows"
+        worker_pool = "hosted-windows"
 
         packages {
             acquisition_location = "Server"
