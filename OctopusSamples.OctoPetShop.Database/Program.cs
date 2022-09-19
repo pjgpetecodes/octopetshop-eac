@@ -28,6 +28,7 @@ namespace OctopusSamples.OctoPetShopDatabase
                 return -1;
             }
 
+            Console.WriteLine("Environment Connection String is: " + environmentVariableConnectionString);
             Console.WriteLine("Connection String is: " + connectionString);
 
             // retry three times
