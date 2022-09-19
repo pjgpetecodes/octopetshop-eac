@@ -9,9 +9,14 @@ step "deploy-octo-pet-shop-eac-web" {
         notes = "This Step will deploy the Octo Pet Shop Web Project to an Azure Web App "
         properties = {
             Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
+            Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
+            Octopus.Action.Package.AutomaticallyUpdateAppSettingsAndConnectionStrings = "True"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.JsonConfigurationVariablesTargets = "appsettings.json"
             Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.Web"
+            Octopus.Action.PowerShell.Edition = "Desktop"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
@@ -44,9 +49,14 @@ step "deploy-octo-pet-shop-eac-product-service" {
         notes = "This Step will deploy the Octo Pet Shop Product Service to an Azure Web App "
         properties = {
             Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
+            Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
+            Octopus.Action.Package.AutomaticallyUpdateAppSettingsAndConnectionStrings = "True"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.JsonConfigurationVariablesTargets = "appsettings.json"
             Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.ProductService"
+            Octopus.Action.PowerShell.Edition = "Desktop"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
@@ -79,9 +89,14 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
         notes = "This Step will deploy the Octo Pet Shop Shopping Cart Service Project to an Azure Web App "
         properties = {
             Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
+            Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
+            Octopus.Action.Package.AutomaticallyUpdateAppSettingsAndConnectionStrings = "True"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.JsonConfigurationVariablesTargets = "appsettings.json"
             Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.ShoppingCartService"
+            Octopus.Action.PowerShell.Edition = "Desktop"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
@@ -114,9 +129,14 @@ step "deploy-octo-pet-shop-eac-database" {
         notes = "This Step will deploy the Octo Pet Shop Database or dbUp Project to an Azure Web App "
         properties = {
             Octopus.Action.Azure.UseChecksum = "False"
+            Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
+            Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
+            Octopus.Action.Package.AutomaticallyUpdateAppSettingsAndConnectionStrings = "True"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.JsonConfigurationVariablesTargets = "appsettings.json"
             Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.Database"
+            Octopus.Action.PowerShell.Edition = "Desktop"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
