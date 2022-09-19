@@ -1,17 +1,17 @@
-step "deploy-octo-pet-shop-eac-database" {
-    name = "Deploy Octo Pet Shop - EAC - Database"
+step "deploy-octo-pet-shop-eac-web" {
+    name = "Deploy Octo Pet Shop - EAC - Web"
     properties = {
-        Octopus.Action.TargetRoles = "OctoPetShop-EAC-Database"
+        Octopus.Action.TargetRoles = "OctoPetShop-EAC-Web"
     }
 
     action {
         action_type = "Octopus.AzureWebApp"
-        notes = "This Step will deploy the Octo Pet Shop Database or dbUp Project to an Azure Web App "
+        notes = "This Step will deploy the Octo Pet Shop Web Project to an Azure Web App "
         properties = {
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
-            Octopus.Action.Package.PackageId = "OctoPetShop.Database"
+            Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.Web"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
@@ -25,7 +25,7 @@ step "deploy-octo-pet-shop-eac-database" {
         packages {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
-            package_id = "OctoPetShop.Database"
+            package_id = "OctopusSamples.OctoPetShop.Web"
             properties = {
                 SelectionMode = "immediate"
             }
@@ -46,7 +46,7 @@ step "deploy-octo-pet-shop-eac-product-service" {
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
-            Octopus.Action.Package.PackageId = "OctoPetShop.ProductService"
+            Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.ProductService"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
@@ -60,7 +60,7 @@ step "deploy-octo-pet-shop-eac-product-service" {
         packages {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
-            package_id = "OctoPetShop.ProductService"
+            package_id = "OctopusSamples.OctoPetShop.ProductService"
             properties = {
                 SelectionMode = "immediate"
             }
@@ -81,7 +81,7 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
-            Octopus.Action.Package.PackageId = "OctoPetShop.ShoppingCartService"
+            Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.ShoppingCartService"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
@@ -95,7 +95,7 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
         packages {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
-            package_id = "OctoPetShop.ShoppingCartService"
+            package_id = "OctopusSamples.OctoPetShop.ShoppingCartService"
             properties = {
                 SelectionMode = "immediate"
             }
@@ -103,20 +103,20 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
     }
 }
 
-step "deploy-octo-pet-shop-eac-web" {
-    name = "Deploy Octo Pet Shop - EAC - Web"
+step "deploy-octo-pet-shop-eac-database" {
+    name = "Deploy Octo Pet Shop - EAC - Database"
     properties = {
-        Octopus.Action.TargetRoles = "OctoPetShop-EAC-Web"
+        Octopus.Action.TargetRoles = "OctoPetShop-EAC-Database"
     }
 
     action {
         action_type = "Octopus.AzureWebApp"
-        notes = "This Step will deploy the Octo Pet Shop Web Project to an Azure Web App "
+        notes = "This Step will deploy the Octo Pet Shop Database or dbUp Project to an Azure Web App "
         properties = {
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
-            Octopus.Action.Package.PackageId = "OctoPetShop.Web"
+            Octopus.Action.Package.PackageId = "OctopusSamples.OctoPetShop.Database"
             Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
@@ -130,7 +130,7 @@ step "deploy-octo-pet-shop-eac-web" {
         packages {
             acquisition_location = "Server"
             feed = "octopus-server-built-in"
-            package_id = "OctoPetShop.Web"
+            package_id = "OctopusSamples.OctoPetShop.Database"
             properties = {
                 SelectionMode = "immediate"
             }
