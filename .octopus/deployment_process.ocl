@@ -8,6 +8,7 @@ step "deploy-octo-pet-shop-eac-web" {
         action_type = "Octopus.AzureWebApp"
         notes = "This Step will deploy the Octo Pet Shop Web Project to an Azure Web App "
         properties = {
+            Octopus.Action.Azure.RemoveAdditionalFiles = "True"
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
             Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
@@ -48,6 +49,7 @@ step "deploy-octo-pet-shop-eac-product-service" {
         action_type = "Octopus.AzureWebApp"
         notes = "This Step will deploy the Octo Pet Shop Product Service to an Azure Web App "
         properties = {
+            Octopus.Action.Azure.RemoveAdditionalFiles = "True"
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
             Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
@@ -88,6 +90,7 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
         action_type = "Octopus.AzureWebApp"
         notes = "This Step will deploy the Octo Pet Shop Shopping Cart Service Project to an Azure Web App "
         properties = {
+            Octopus.Action.Azure.RemoveAdditionalFiles = "True"
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
             Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
@@ -128,6 +131,7 @@ step "deploy-octo-pet-shop-eac-database" {
         action_type = "Octopus.AzureWebApp"
         notes = "This Step will deploy the Octo Pet Shop Database or dbUp Project to an Azure Web App "
         properties = {
+            Octopus.Action.Azure.RemoveAdditionalFiles = "True"
             Octopus.Action.Azure.UseChecksum = "False"
             Octopus.Action.EnabledFeatures = "Octopus.Features.JsonConfigurationVariables,Octopus.Features.ConfigurationVariables,Octopus.Features.ConfigurationTransforms,Octopus.Features.SelectPowerShellEditionForWindows"
             Octopus.Action.Package.AutomaticallyRunConfigurationTransformationFiles = "True"
