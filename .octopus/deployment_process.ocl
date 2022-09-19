@@ -12,9 +12,15 @@ step "deploy-octo-pet-shop-eac-database" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "OctoPetShop.Database"
+            Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
-        worker_pool_variable = ""
+        worker_pool = "hosted-windows"
+
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
 
         packages {
             acquisition_location = "Server"
@@ -41,9 +47,15 @@ step "deploy-octo-pet-shop-eac-product-service" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "OctoPetShop.ProductService"
+            Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
-        worker_pool_variable = ""
+        worker_pool = "hosted-windows"
+
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
 
         packages {
             acquisition_location = "Server"
@@ -70,9 +82,15 @@ step "deploy-octo-pet-shop-eac-shopping-cart-service" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "OctoPetShop.ShoppingCartService"
+            Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
-        worker_pool_variable = ""
+        worker_pool = "hosted-windows"
+
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
 
         packages {
             acquisition_location = "Server"
@@ -99,9 +117,15 @@ step "deploy-octo-pet-shop-eac-web" {
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
             Octopus.Action.Package.PackageId = "OctoPetShop.Web"
+            Octopus.Action.RunOnServer = "true"
             OctopusUseBundledTooling = "False"
         }
-        worker_pool_variable = ""
+        worker_pool = "hosted-windows"
+
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
 
         packages {
             acquisition_location = "Server"
