@@ -42,7 +42,7 @@ jobs:
     - name: Publish OctoPetShopShoppingCartService
       run: dotnet publish OctopusSamples.OctoPetShop.ShoppingCartService/OctopusSamples.OctoPetShop.ShoppingCartService.csproj --configuration Release --output "$GITHUB_WORKSPACE/artifacts/OctopusSamples.OctoPetshop.ShoppingCartService"
     - name: Install Octopus CLI
-      uses: OctopusDeploy/install-octopus-cli-action@v1.1.10
+      uses: OctopusDeploy/install-octopus-cli-action@v1.2.0
       with:
         version: latest
     - name: Package OctoPetShopDatabase
