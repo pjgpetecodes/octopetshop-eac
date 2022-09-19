@@ -28,6 +28,9 @@ namespace OctopusSamples.ProductService.Repositories
         {
             _configuration = configuration;
             _environmentConfig = configurationSettings.Value;
+
+            Console.WriteLine("Config Conenction String: " + _configuration.GetConnectionString("OPSConnectionString"));
+            Console.WriteLine("Env Conenction String: " + _environmentConfig.OPSConnectionString);            
         }
 
         public async Task<List<ProductDetail>> GetAll()
