@@ -179,3 +179,28 @@ step "deploy-octo-pet-shop-eac-database" {
         }
     }
 }
+
+step "print-out-url" {
+    name = "Print out URL"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.RunOnServer = "true"
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                $URL = $OctopusParameters["Project.Web.URL"]
+                Write-Highlight "OctoPetShop has been deployed to [$url]($url)"
+                Write-Highlight "Please verify the deployment has completed successfully"
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+            OctopusUseBundledTooling = "False"
+        }
+        worker_pool = "hosted-windows"
+
+        container {
+            feed = "dockerhub"
+            image = "octopusdeploy/worker-tools:3.3.2-windows.ltsc2019"
+        }
+    }
+}
