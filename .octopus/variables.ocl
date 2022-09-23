@@ -1,0 +1,99 @@
+variable "AppSettings:AppVersion" {
+    value "#{Octopus.Release.Number}" {}
+}
+
+variable "AppSettings:EnvironmentName" {
+    value "#{Octopus.Environment.Name}" {}
+}
+
+variable "AppSettings:ProductServiceBaseUrl" {
+    value "https://#{Project.ProductService.Name}.azurewebsites.net/" {}
+}
+
+variable "AppSettings:ShoppingCartServiceBaseUrl" {
+    value "https://#{Project.ShoppingCartService.Name}.azurewebsites.net/" {}
+}
+
+variable "ConnectionStrings:OPSConnectionString" {
+    value "Server=#{Project.Database.Server.FQDN};Database=#{Project.Database.Name}; User ID=#{Project.Database.Admin.Username}; Password=#{Project.Database.Admin.Password}" {}
+}
+
+variable "OctopusPrintEvaluatedVariables" {
+    value "False" {}
+}
+
+variable "OctopusPrintVariables" {
+    value "False" {}
+}
+
+variable "Project.AzureAppServicePlan.Type" {
+    value "windows" {}
+}
+
+variable "Project.Database.Admin.Password" {
+    value "#{Azure.SQL.Server.Admin.Password}" {}
+}
+
+variable "Project.Database.Admin.Username" {
+    value "#{Azure.SQL.Server.Admin.Username}" {}
+}
+
+variable "Project.Database.ConnectionString" {
+    value "#{ConnectionStrings:OPSConnectionString}" {}
+}
+
+variable "Project.Database.Location" {
+    value "#{Azure.Location.Abbr}" {}
+}
+
+variable "Project.Database.Name" {
+    value "#{Octopus.Space.Name | ToLower | Replace \" \"}-#{Octopus.Project.Name | ToLower | Replace \" \"}-database-#{Octopus.Environment.Name | ToLower | Replace \" \"}" {}
+}
+
+variable "Project.Database.Server" {
+    value "#{Azure.SQL.Server.Name}" {}
+}
+
+variable "Project.Database.Server.FQDN" {
+    value "#{Azure.SQL.Server.Name}.database.windows.net" {}
+}
+
+variable "Project.Database.Sku" {
+    value "#{Azure.SQL.Server.Sku}" {}
+}
+
+variable "Project.Database.Tier" {
+    value "#{Azure.SQL.Server.Tier}" {}
+}
+
+variable "Project.ProductService.Name" {
+    value "#{Octopus.Space.Name | ToLower | Replace \" \"}-#{Octopus.Project.Name | ToLower | Replace \" \"}-productservice-#{Octopus.Environment.Name | ToLower | Replace \" \"}" {}
+}
+
+variable "Project.Role.Database.Name" {
+    value "OctoPetShop-EAC-Database" {}
+}
+
+variable "Project.Role.ProductService.Name" {
+    value "OctoPetShop-EAC-ProductService" {}
+}
+
+variable "Project.Role.ShoppingCartService.Name" {
+    value "OctoPetShop-EAC-ShoppingCartService" {}
+}
+
+variable "Project.Role.Web.Name" {
+    value "OctoPetShop-EAC-Web" {}
+}
+
+variable "Project.ShoppingCartService.Name" {
+    value "#{Octopus.Space.Name | ToLower | Replace \" \"}-#{Octopus.Project.Name | ToLower | Replace \" \"}-shoppingcartservice-#{Octopus.Environment.Name | ToLower | Replace \" \"}" {}
+}
+
+variable "Project.Web.URL" {
+    value "https://#{Octopus.Space.Name | ToLower | Replace \" \"}-#{Octopus.Project.Name}-web-#{Octopus.Environment.Name}.azurewebsites.net" {}
+}
+
+variable "Project.WebApp.Name" {
+    value "#{Octopus.Space.Name | ToLower | Replace \" \"}-#{Octopus.Project.Name | ToLower | Replace \" \"}-web-#{Octopus.Environment.Name | ToLower | Replace \" \"}" {}
+}
