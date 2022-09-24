@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
-    <RepositoryUrl>https://github.com/OctopusSamples/OctoPetShop.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/pjgpetecodes/octopetshop-eac.git</RepositoryUrl>
     <UserSecretsId>a8ab1976-376a-4758-84bd-a1aa688371a2</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>

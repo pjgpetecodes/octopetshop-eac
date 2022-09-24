@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RepositoryUrl>https://github.com/OctopusSamples/OctoPetShop.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/pjgpetecodes/octopetshop-eac.git</RepositoryUrl>
     <IsPackable>true</IsPackable>
     <UserSecretsId>b4287ec1-13bb-4a0f-9a77-137161cfe76c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
