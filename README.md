@@ -28,3 +28,19 @@ Octopus Pet Shop Example Web app written in .NET Core.  This solution consists o
 dbUpConnectionString=Data Source/=.\SQLEXPRESS;Integrated Security/=True;Connect Timeout/=30;Encrypt/=False;TrustServerCertificate/=False;ApplicationIntent/=ReadWrite;MultiSubnetFailover/=False;Database/=ops
 ```
 
+# GitHub Actions:
+
+For the Build and Push to Octopus Action `dotnet-core-build.yml`, add the following secrets to GitHub;
+
+- `OCTOPUSSERVERURL` (e.g. pjgcreations.octopus.app)
+- `OCTOPUSSERVERAPIKEY` (Create in https://<YOUR OCTOPUS CLOUD INSTANCE NAME>.octopus.app/app#/Spaces-1/users/me/apiKeys)
+- `OCTOPUSSERVER_SPACE` (e.g. default)
+
+For the NuGet Build and Push Action `dotnet-core-nuget.yml`, you will need to change the `RepositoryUrl` in the following csproj files;
+
+- `OctopusSamples.OctoPetShop.Web.csproj`
+- `OctopusSamples.OctoPetShop.Database.csproj`
+- `OctopusSamples.OctoPetShop.ProductService.csproj`
+- `OctopusSamples.OctoPetShop.ShoppingCartService.csproj`
+
+You will also need to create a Personal Access Token with the `write:packages` scope.
