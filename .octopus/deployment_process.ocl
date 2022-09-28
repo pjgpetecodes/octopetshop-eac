@@ -16,17 +16,18 @@ step "health-check" {
     }
 }
 
-step "manual-intervention-required" {
-    name = "Manual Intervention Required"
+step "add-a-new-message" {
+    name = "Add a new Message"
 
     action {
-        action_type = "Octopus.Manual"
+        action_type = "Octopus.Script"
         properties = {
-            Octopus.Action.Manual.BlockConcurrentDeployments = "False"
-            Octopus.Action.Manual.Instructions = "You need to authorise this"
-            Octopus.Action.Manual.ResponsibleTeamIds = "global/octopus-managers"
+            Octopus.Action.RunOnServer = "true"
+            Octopus.Action.Script.ScriptBody = "Write-Highlight \"Hello London\""
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
         }
-        worker_pool_variable = ""
+        worker_pool = "hosted-windows"
     }
 }
 
