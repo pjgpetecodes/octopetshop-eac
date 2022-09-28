@@ -204,3 +204,17 @@ step "print-out-url" {
         }
     }
 }
+
+step "manual-intervention-required" {
+    name = "Manual Intervention Required"
+
+    action {
+        action_type = "Octopus.Manual"
+        properties = {
+            Octopus.Action.Manual.BlockConcurrentDeployments = "False"
+            Octopus.Action.Manual.Instructions = "Approve me"
+            Octopus.Action.Manual.ResponsibleTeamIds = "global/octopus-managers"
+        }
+        worker_pool_variable = ""
+    }
+}
