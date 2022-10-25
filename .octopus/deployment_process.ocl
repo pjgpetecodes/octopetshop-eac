@@ -212,7 +212,7 @@ step "add-a-new-message" {
         action_type = "Octopus.Script"
         properties = {
             Octopus.Action.RunOnServer = "true"
-            Octopus.Action.Script.ScriptBody = "Write-Highlight \"Hello London\""
+            Octopus.Action.Script.ScriptBody = "Write-Highlight \"Hello Folks\""
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
